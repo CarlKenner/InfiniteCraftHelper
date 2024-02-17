@@ -4,13 +4,13 @@
 // @namespace		mikarific.com
 // @match			https://neal.fun/infinite-craft/*
 // @version			2.0.0
-// @author			Mikarific
+// @author			Mikarific, Carl Kenner
 // @description		A script that adds various useful features to Infinite Craft.
 // @grant			GM.setValue
 // @grant			GM.getValue
 // @grant			GM.xmlHttpRequest
-// @downloadURL		https://github.com/Mikarific/InfiniteCraftHelper/raw/main/dist/InfiniteCraftHelper.user.js
-// @updateURL		https://github.com/Mikarific/InfiniteCraftHelper/raw/main/dist/InfiniteCraftHelper.user.js
+// @downloadURL		https://github.com/CarlKenner/InfiniteCraftHelper/raw/main/dist/InfiniteCraftHelper.user.js
+// @updateURL		https://github.com/CarlKenner/InfiniteCraftHelper/raw/main/dist/InfiniteCraftHelper.user.js
 //
 // Created with love using Gorilla
 // ==/UserScript==
