@@ -32,6 +32,7 @@ export async function init(elements: elements) {
 	craftsModal.appendChild(craftsContainer);
 
 	recipes = JSON.parse(((await GM.getValue('recipes')) as string) ?? '{}');
+	await importInfiniteCraftTweaks();
 
 	closeButton.addEventListener('click', (e) => {
 		craftsModal.close();
@@ -64,6 +65,18 @@ export async function addElementToCrafts(
 		},
 	]);
 	await GM.setValue('recipes', JSON.stringify(recipes));
+}
+
+export async function importInfiniteCraftTweaks() {
+	let importedTweaksRecipes = await GM.getValue('infinitecraft_observed_combos', {}) ?? {};
+	if (typeof importedTweaksRecipes === 'string') {
+		importedTweaksRecipes = JSON.parse(importedTweaksRecipes);
+	}
+	for (const result in importedTweaksRecipes) {
+		for(const ingredientPair of importedTweaksRecipes[result]) {
+			await addElementToCrafts(ingredientPair[0], ingredientPair[1], result);
+		}
+	}
 }
 
 export function openCraftsForElement(element: { text: string; emoji?: string }) {
